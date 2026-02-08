@@ -34,3 +34,12 @@
     transform: translateX(-50%);
     font-size: 0.7rem;
 }
+
+.figure {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    padding-bottom: calc(0.7rem + 2%);
+    margin: auto;
+}
