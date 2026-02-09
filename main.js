@@ -40,7 +40,6 @@ function handleClick(e) {
     }
     if (clickNumber === 2) {
         let target = e.target
-        console.log(target.tagName)
         if (target.tagName !== "DIV") {
             target = target.parentNode
         }
