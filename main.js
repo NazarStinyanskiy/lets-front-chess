@@ -73,7 +73,9 @@ async function makeMove() {
         })
     });
     if (!response.ok) {
-        console.log("Failed to request startGame. Status code: " + response.status)
+        if (response.status === 400) {
+            alert("Wrong move")
+        }
     }
     return await response.json();
 }
@@ -142,10 +144,11 @@ createField();
 getGame()
     .then(result => {
         gameId = result.gameId;
+        document.getElementById("gameId").textContent = gameId
         placeFigures(result.board);
     });
 
 // All this shit works, but...... Will be rewritten, lol
-// 1) don't request full board updates. Just updated pieces.
+// 1) don't request full board updates. Just updated cells.
 // 2) don't update all board
 // 3) find a way to exclude img loading on moves
